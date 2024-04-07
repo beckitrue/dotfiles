@@ -1,0 +1,10 @@
+[user]
+	name = beckitrue
+	email = 3496219+beckitrue@users.noreply.github.com
+[credential]
+	credentialStore = cache
+	helper = cache --timeout 7200
+[init]
+	defaultBranch = main
+[core]
+	excluesFile = ignore

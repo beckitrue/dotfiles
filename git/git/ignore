@@ -1,0 +1,45 @@
+# Folder view configuration files
+.DS_Store
+Desktop.ini
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+
+# Compiled Python files
+*.pyc
+
+# Compoiled C++ files
+*.out
+
+# Application specific files
+venv/
+node_modules/
+.saas-cache/
+
+# Terraform files
+*.tfstate
+*.tfstate.backup
+*.tfstate.lock.info
+
+# logs
+*.log
+
+# Directories
+.terraform/
+.vagrant/
+
+# SSH keys
+*.pem
+
+# Backup files
+*.bak
+
+# vscode files
+.vscode/
+
+
