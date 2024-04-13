@@ -11,11 +11,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # ZSH_THEME="robbyrussell"
 ZSH_THEME="amuse"
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+# reevaluate the prompt string each time 
+setopt prompt_subst
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -104,6 +101,7 @@ alias ll='ls -l'
 alias la='ls -al'
 alias psef='ps -ax |grep $1'
 alias cat='bat'
+alias cl='clear'
 
 # kubectl
 alias k='kubectl'
