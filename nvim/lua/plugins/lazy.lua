@@ -212,7 +212,28 @@ require('lazy').setup({
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   'numToStr/Comment.nvim', -- "gc" to comment visual regions/lines 
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-	
+
+  -- LazyGit
+  {
+      "kdheepak/lazygit.nvim",
+      cmd = {
+              "LazyGit",
+              "LazyGitConfig",
+              "LazyGitCurrentFile",
+              "LazyGitFilter",
+              "LazyGitFilterCurrentFile",
+      },
+      -- optional for floating window border decoration
+      dependencies = {
+          "nvim-lua/plenary.nvim",
+      },
+      -- setting the keybinding for LazyGit with 'keys' is recommended in
+      -- order to load the plugin when the command is run for the first time
+      keys = {
+         { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
+      }
+  },
+
   -- Fuzzy Finder (files, lsp, etc)
   { 'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
   'nvim-telescope/telescope-symbols.nvim',
