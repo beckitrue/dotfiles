@@ -14,6 +14,13 @@ ZSH_THEME="amuse"
 # reevaluate the prompt string each time 
 setopt prompt_subst
 
+autoload bashcompinit && bashcompinit
+autoload -Uz compinit
+compinit
+
+eval "$(starship init zsh)"
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
