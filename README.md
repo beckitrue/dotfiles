@@ -4,6 +4,14 @@ a repo of my dotfiles and installation scripts
 ## Install with stow
 `stow --target ~/.config .`
 
+### Install packages
+```
+stow git
+stow nvim
+stow tmux
+stow zshrc
+```
+
 The file structure is as shown below:
 
 ![image of file structure](dotfiles.png)
