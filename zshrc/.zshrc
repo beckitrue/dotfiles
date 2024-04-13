@@ -9,17 +9,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="amuse"
-
-# reevaluate the prompt string each time 
-setopt prompt_subst
-
-autoload bashcompinit && bashcompinit
-autoload -Uz compinit
-compinit
-
-eval "$(starship init zsh)"
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
+# ZSH_THEME="amuse"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -77,6 +67,8 @@ export STARSHIP_CONFIG=~/.config/starship/starship.toml
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
+# setting location for zcompdump
+export ZSH_COMPDUMP="$ZSH/cache/zcompdump-$HOSTNAME-$ZSH_VERSION"
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -151,3 +143,7 @@ export PATH=$PATH:$GOBIN
 #FZF
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(starship init zsh)"
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
+
