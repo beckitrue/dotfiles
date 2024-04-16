@@ -122,8 +122,6 @@ alias -s md=code
 alias -s json=code
 alias -s {cs, ts, html}=code
 
-alias nvim='/home/becki/nvim-linux64/bin/nvim'
-
 mkcdir ()
 {
    mkdir -p -- "$1" &&
