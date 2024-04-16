@@ -45,7 +45,7 @@ require('lazy').setup({
       pcall(require('nvim-treesitter.install').update { with_sync = true })
     end,
     dependencies = {
-      'nvim-treesitter/nvim-treesitter-textobjects',
+       'nvim-treesitter/nvim-treesitter-textobjects',
     }
   },
 
@@ -57,7 +57,7 @@ require('lazy').setup({
     "nvim-tree/nvim-tree.lua",
     version = "*",
     lazy = false,
-    requires = {
+    dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
     config = function()
@@ -193,19 +193,19 @@ require('lazy').setup({
     }
   },
 
+  {
+	"L3MON4D3/LuaSnip",
+	-- follow latest release.
+	version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+	-- install jsregexp (optional!).
+	build = "make install_jsregexp"
+  },
+
   { -- Autocompletion
     'hrsh7th/nvim-cmp',
     dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
   },
-  { -- Highlight, edit, and navigate code
-    'nvim-treesitter/nvim-treesitter',
-    build = function()
-      pcall(require('nvim-treesitter.install').update { with_sync = true })
-    end,
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter-textobjects',
-    }
-  },
+
   { "nvim-neotest/nvim-nio" },
   { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap"} },
   'theHamsta/nvim-dap-virtual-text',
