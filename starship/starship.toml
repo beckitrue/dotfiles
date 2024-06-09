@@ -3,6 +3,16 @@ command_timeout = 1000
 format = """$directory$character"""
 palette = "catppuccin_macchiato"
 
+# ~/.config/starship.toml
+
+[git_branch]
+symbol = '🌱 '
+# truncation_length = 4
+# truncation_symbol = ''
+# ignore_branches = ['master', 'main']
+format = '[$symbol$branch]($style) '
+
+
 [palettes.catppuccin_macchiato]
 rosewater = "#f4dbd6"
 flamingo = "#f0c6c6"
