@@ -1,7 +1,7 @@
 # dotfiles symlinked with stow
 a repo of my dotfiles and installation scripts
 
-## Install with stow
+## Install with stow from home directory
 `stow --target ~/.config .`
 
 ### Install packages
@@ -10,6 +10,7 @@ stow git
 stow nvim
 stow tmux
 stow zshrc
+stow starship
 ```
 
 The file structure is as shown below:
