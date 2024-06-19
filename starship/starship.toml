@@ -1,5 +1,5 @@
-# set timeout for command execution to 1 second
-command_timeout = 1000
+# set timeout for command execution to 2 seconds
+command_timeout = 2000
 format = """$all$directory$character"""
 palette = "catppuccin_macchiato"
 
