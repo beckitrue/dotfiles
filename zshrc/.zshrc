@@ -139,7 +139,7 @@ export GOBIN=/home/becki/go/bin
 export PATH=$PATH:$GOBIN
 
 #FZF
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude ".git" --follow'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS='-i --height=50% --preview "bat --color=always --style=header,grid --line-range :500 {}"'
 
