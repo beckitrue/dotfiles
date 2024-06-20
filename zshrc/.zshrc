@@ -130,12 +130,12 @@ mkcdir ()
 
 # add go to path
 export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:/home/becki/.local/bin
-export GOPATH=/home/becki/repos/go_projects
+export PATH=$PATH:~/.local/bin
+export GOPATH=~/repos/go_projects
 export GOROOT=/usr/local/go
-export XDG_CONFIG_HOME=/home/becki/.config
+export XDG_CONFIG_HOME=~/.config
 export PATH=$PATH:$GOPATH/bin
-export GOBIN=/home/becki/go/bin
+export GOBIN=~/go/bin
 export PATH=$PATH:$GOBIN
 
 #FZF
