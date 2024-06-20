@@ -1,7 +1,7 @@
 # dotfiles symlinked with stow
 a repo of my dotfiles and installation scripts
 
-## Install with stow from home directory
+## Install with stow from dotfiles directory
 `stow --target ~/.config .`
 
 ### Install packages
