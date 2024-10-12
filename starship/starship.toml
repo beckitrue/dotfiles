@@ -1,6 +1,8 @@
+add_newline = true
 # set timeout for command execution to 2 seconds
 command_timeout = 2000
-format = """$all$directory$character"""
+format = """$directory$character"""
+right_format = """$all"""
 palette = "catppuccin_macchiato"
 
 [git_branch]
