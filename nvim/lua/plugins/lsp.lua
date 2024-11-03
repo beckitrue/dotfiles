@@ -54,15 +54,11 @@ end
 
 -- Setup mason so it can manage external tooling
 require('mason').setup()
+require('mason-lspconfig').setup() 
 
 -- Enable the following language servers
 -- Feel free to add/remove any LSPs that you want here. They will automatically be installed
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'gopls'  }
-
--- Ensure the servers above are installed
-require('mason-lspconfig').setup {
-  ensure_installed = servers,
-}
+local servers = { 'clangd', 'rust_analyzer', 'pyright', 'ts_ls', 'gopls'  }
 
 -- nvim-cmp supports additional completion capabilities
 local capabilities = vim.lsp.protocol.make_client_capabilities()
