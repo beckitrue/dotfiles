@@ -69,7 +69,7 @@ plugins=(git)
 
 # setting location for zcompdump
 export ZSH_COMPDUMP="$ZSH/cache/zcompdump-$HOSTNAME-$ZSH_VERSION"
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
