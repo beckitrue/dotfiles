@@ -1,30 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
-# ZSH_THEME="amuse"
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
-
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-
-# Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -49,27 +28,11 @@ export ZSH="$HOME/.oh-my-zsh"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+ ZSH_CUSTOM=~/.config/zshrc/custom
 
 # setting location for zcompdump
 export ZSH_COMPDUMP="$ZSH/cache/zcompdump-$HOSTNAME-$ZSH_VERSION"
-# source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -92,41 +55,11 @@ export ZSH_COMPDUMP="$ZSH/cache/zcompdump-$HOSTNAME-$ZSH_VERSION"
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ll='ls -l'
-alias la='ls -al'
-alias psef='ps -ax |grep $1'
-alias cat='bat'
-alias cl='clear'
+# 
+# aliases are in the ZSH_CUSTOM folder 
 
-# kubectl
-alias k='kubectl'
-alias kgx='kubectl config get contexts'
-alias ka='kubectl apply -f'
-alias kd='kubectl describe'
-alias kg='kubectl get'
-alias kdel='kubectl delete'
-alias kgpod='kubectl get pods'
-
-# docker 
-alias d='docker'
-alias dps='docker ps'
-alias dco='docker-compose'
-
-# suffix aliases
-alias -s tf=code
-alias -s md=code
-alias -s json=code
-alias -s {cs, ts, html}=code
-
-mkcdir ()
-{
-   mkdir -p -- "$1" &&
-      cd -P -- "$1"
-}
+# source aliases
+source ~/.config/zshrc/custom/aliases.zsh
 
 # add go to path
 export PATH=$PATH:/usr/local/go/bin
