@@ -16,6 +16,14 @@ vim.opt.rtp:prepend(lazypath)
 vim.o.termguicolors = true
 
 require('lazy').setup({
+ -- install neorg with lazy 
+  {
+    "nvim-neorg/neorg",
+    lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+    version = "*", -- Pin Neorg to the latest stable release
+    config = true,
+  },
+
   'onsails/lspkind.nvim',
   { 
     "iamcco/markdown-preview.nvim",
@@ -23,11 +31,11 @@ require('lazy').setup({
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
   },
+
+  -- penicil
   "preservim/vim-pencil",
-  {
-    "sourcegraph/sg.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-  },
+
+  -- Obsidian
   {
     "epwalsh/obsidian.nvim",
     version = "*",  -- recommended, use latest release instead of latest commit
