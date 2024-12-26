@@ -59,12 +59,20 @@ export ZSH_COMPDUMP="$ZSH/cache/zcompdump-$HOSTNAME-$ZSH_VERSION"
 # aliases are in the ZSH_CUSTOM folder 
 
 # source aliases
+#
+
 source ~/.config/zshrc/custom/aliases.zsh
+function bsky-login-env() {
+export ATP_AUTH_USERNAME=$1
+export ATP_AUTH_PASSWORD=$(op read "op://Private/Bluesky beckitrue/password")
+    echo "ATP_AUTH_USERNAME=$ATP_AUTH_USERNAME"
+    echo "ATP_AUTH_PASSWORD=$ATP_AUTH_PASSWORD"
+}
 
 # add go to path
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/.local/bin
-export GOPATH=~/repos/go_projects
+export GOPATH=$HOME/go
 export GOROOT=/usr/local/go
 export XDG_CONFIG_HOME=~/.config
 export PATH=$PATH:$GOPATH/bin
@@ -79,3 +87,7 @@ export FZF_DEFAULT_OPTS='-i --height=50% --preview "bat --color=always --style=h
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

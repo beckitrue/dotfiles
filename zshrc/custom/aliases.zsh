@@ -19,14 +19,14 @@ alias dps='docker ps'
 alias dco='docker-compose'
 
 # suffix aliases
-alias -s tf=code
-alias -s md=code
-alias -s json=code
-alias -s {cs, ts, html}=code
+#alias -s tf=code
+#alias -s md=code
+#alias -s json=code
+#alias -s {cs, ts, html}=code
 
 mkcdir ()
 {
    mkdir -p -- "$1" &&
       cd -P -- "$1"
 }
- 
+
