@@ -11,6 +11,7 @@ ln -s $(which batcat) bat
 go install github.com/jesseduffield/lazygit@latest
 
 # Use stow to create symlinks
+mkdir ~/.config
 cd ~/dotfiles
 stow --target ~.config . -v
 
