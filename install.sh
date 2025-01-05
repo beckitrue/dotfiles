@@ -16,4 +16,4 @@ cd ~/dotfiles
 stow --target ~/.config . -v
 
 # Comment out the obsidian line in init.lua
-sed -i 's/require("plugins.obsidian")/-- require("plugins.obsidian")/g' ~/.config/nvim/init.lu
+sed -i 's/require("plugins.obsidian")/-- require("plugins.obsidian")/g' ~/.config/nvim/init.lua
