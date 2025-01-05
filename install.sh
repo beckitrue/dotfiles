@@ -13,7 +13,7 @@ go install github.com/jesseduffield/lazygit@latest
 # Use stow to create symlinks
 mkdir ~/.config
 cd ~/dotfiles
-stow --target ~.config . -v
+stow --target ~/.config . -v
 
 # Comment out the obsidian line in init.lua
 sed -i 's/require("plugins.obsidian")/-- require("plugins.obsidian")/g' ~/.config/nvim/init.lu
