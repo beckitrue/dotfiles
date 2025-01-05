@@ -16,7 +16,7 @@ cd ~/dotfiles
 stow --target ~/.config . -v
 
 # Comment out the obsidian line in init.lua
-sed -i "s/require('plugins.obsidian')/-- require('plugins.obsidian')/g" ~/.config/nvim/init.lua
+sed -i "s/^require('plugins.obsidian')/-- require('plugins.obsidian')/g" ~/.config/nvim/init.lua
 
 # Change the default shell to zsh
 chsh -s $(which zsh)
