@@ -9,6 +9,7 @@ cd ~/.local/bin
 ln -s $(which fdfind) fd
 ln -s $(which batcat) bat
 go install github.com/jesseduffield/lazygit@latest
+curl https://fx.wtf/install.sh | sh
 
 # Use stow to create symlinks
 mkdir ~/.config
