@@ -1,4 +1,5 @@
 # appearance
+theme = catppuccin-frappe
 font-family = NotoMono Nerd Font Mono
 font-size = 12
 mouse-hide-while-typing = true
