@@ -1,4 +1,4 @@
--- Install lazylazy
+-- Install lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -116,6 +116,61 @@ require('lazy').setup({
     })
   end,
 },
+
+  -- Claude Code
+  {
+    "greggh/claude-code.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim", -- Required for git operations
+    },
+    config = function()
+      require("claude-code").setup({
+        -- Terminal window settings
+        window = {
+          split_ratio = 0.3,     -- Percentage of a screen
+          position = "botright", -- Position of the window
+          enter_insert = true,
+          hide_numbers = true,
+          hide_signcolumn = true,
+
+          float = {
+            width = "80%",
+            height = "80%",
+            row = "center",
+            relative = "editor",
+            border = "rounded",
+          },
+        },
+        -- File refresh settings
+        refresh = {
+          enable = true,
+          updatetime = 100,
+          timer_interval = 1000,
+          show_notifications = true,
+        },
+        -- Git project settings
+        git = {
+          use_git_root = true, 
+        },
+        -- Shell specific settings
+        shell = {
+          separator = '&&',
+          pushd_command = 'pushd',
+          popd_command = 'popd',
+        },
+        -- Command settings
+        command = 'claude',
+        -- Command variants
+        command_variants = {
+          -- Conversation management
+          continue = "--continue",
+          resume = "--resume",
+          -- Output options
+          verbose = "--verbose",
+        }
+      })
+    end
+  },
 
   'onsails/lspkind.nvim',
   { 
