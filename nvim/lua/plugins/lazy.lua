@@ -1,4 +1,4 @@
--- Install lazylazy
+-- Install lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -116,6 +116,58 @@ require('lazy').setup({
     })
   end,
 },
+
+  -- Claude Code
+  {
+    "greggh/claude-code.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    config = function()
+      require("claude-code").setup({
+        window = {
+          split_ratio = 0.3,
+          position = "botright",
+          enter_insert = true,
+          hide_numbers = true,
+          hide_signcolumn = true,
+          float = {
+            width = "80%",
+            height = "80%",
+            row = "center",
+            relative = "editor",
+            border = "rounded",
+          },
+        },
+        refresh = {
+          enable = true,
+          updatetime = 100,
+          timer_interval = 1000,
+          show_notifications = true,
+        },
+        git = { use_git_root = true },
+        shell = {
+          separator = '&&',
+          pushd_command = 'pushd',
+          popd_command = 'popd',
+        },
+        command = 'claude',
+        command_variants = {
+          continue = "--continue",
+          resume = "--resume",
+          verbose = "--verbose",
+        }
+      })
+    end
+  },
+
+  'onsails/lspkind.nvim',
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = "cd app && npx --yes yarn install",
+  },
 
   -- penicil
   "preservim/vim-pencil",
