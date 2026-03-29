@@ -87,7 +87,31 @@ export FZF_DEFAULT_OPTS='-i --height=50% --preview "bat --color=always --style=h
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
+# randcom password generator
+# Usage: randompass [length] (default: 16)
+randompass() {
+    local length=${1:-16}
+    local password=$(openssl rand -base64 $((length * 3 / 4)) | tr -d "=+/" | head -c "$length")
+    echo "$password"
+    echo -n "$password" | xclip -selection clipboard
+    echo "Random password of length $length copied to clipboard."
+  }
+
 
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+. "$HOME/repos/dir/bin/env"
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/home/becki/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+
+# bun completions
+[ -s "/home/becki/.bun/_bun" ] && source "/home/becki/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

@@ -25,3 +25,4 @@ keybind = ctrl+a>right=goto_split:right
 keybind = ctrl+a>down=goto_split:bottom
 keybind = ctrl+a>up=goto_split:top
 keybind = ctrl+a>;=goto_split:previous
+keybind = shift+enter=text:\n

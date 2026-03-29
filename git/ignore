@@ -10,6 +10,9 @@ Thumbs.db
 .Spotlight-V100
 .Trashes
 
+# environment files
+.env
+
 # Compiled Python files
 *.pyc
 
@@ -43,3 +46,7 @@ node_modules/
 .vscode/
 
 
+
+**/.claude/settings.local.json
+
+**/CLAUDE.local.md

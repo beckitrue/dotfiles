@@ -117,14 +117,6 @@ require('lazy').setup({
   end,
 },
 
-  'onsails/lspkind.nvim',
-  { 
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    ft = { "markdown" },
-    build = function() vim.fn["mkdp#util#install"]() end,
-  },
-
   -- penicil
   "preservim/vim-pencil",
 
@@ -142,12 +134,33 @@ require('lazy').setup({
   -- Treesitter
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
+    dependencies = { "OXY2DEV/markview.nvim" },
+    lazy = false,
+
+    -- ... All other options.
     build = function()
       pcall(require('nvim-treesitter.install').update { with_sync = true })
     end,
   },
 
-  'github/copilot.vim',	
+  {
+    "zbirenbaum/copilot.lua",
+    lazy = false,
+    config = function()
+      require("copilot").setup({
+        copilot_node_command = vim.fn.trim(vim.fn.system("which node")),
+        suggestion = { enabled = true },
+        panel = { enabled = false },
+      })
+    end,
+  },
+  {
+    "zbirenbaum/copilot-cmp",
+    dependencies = { "zbirenbaum/copilot.lua" },
+    config = function()
+      require("copilot_cmp").setup()
+    end,
+  },
   'David-Kunz/gen.nvim',
 
   -- Tree

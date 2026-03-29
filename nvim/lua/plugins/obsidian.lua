@@ -2,12 +2,19 @@ require("obsidian").setup({
   workspaces = {
     {
       name = "Notes",
-      path = "/home/becki/Notes",
+      path = "/home/becki/Notes/Sync",
     },
   },
   daily_notes = {
     folder = "journal",
   },
+  note_id_func = function(title)
+    if title ~= nil then
+      return title:gsub(" ", "-"):gsub("[^a-zA-Z0-9-]", ""):lower()
+    else
+      return tostring(os.time())
+    end
+  end,
   new_notes_location = "notes_subdir",
   wiki_link_func = function(opts)
     if opts.id == nil then
@@ -44,7 +51,7 @@ require("obsidian").setup({
     use_path_only = false,
   },
   templates = {
-      subdir = "Templates",
+      folder = "/home/becki/Notes/Sync/Templates",
       date_format = "%Y-%m-%d-%a",
       time_format = "%H:%M",
   },

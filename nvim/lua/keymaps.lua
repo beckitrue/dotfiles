@@ -30,6 +30,5 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = tr
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Mapping for Copilot
-vim.keymap.set('i', '<C-J>', 'copilot#Accept("\\<CR>")', { expr = true, replace_keycodes = false })
-vim.g.copilot_no_tab_map = true
-vim.keymap.set('i', '<C-L>', '<Plug>(copilot-accept-word)')
+vim.keymap.set('i', '<C-J>', function() require("copilot.suggestion").accept() end, { desc = "Accept Copilot suggestion" })
+vim.keymap.set('i', '<C-L>', function() require("copilot.suggestion").accept_word() end, { desc = "Accept Copilot word" })

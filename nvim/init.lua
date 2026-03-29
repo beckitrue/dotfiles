@@ -1,6 +1,5 @@
 require('keymaps')
 require('plugins.lazy')
-require('plugins.nvim-cmp')
 require('plugins.misc')
 require('plugins.lualine')
 require('options')
