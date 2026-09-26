@@ -190,29 +190,9 @@ require('lazy').setup({
     lazy = false,
 
     -- ... All other options.
-    build = function()
-      pcall(require('nvim-treesitter.install').update { with_sync = true })
-    end,
+    build = ':TSUpdate',
   },
 
-  {
-    "zbirenbaum/copilot.lua",
-    lazy = false,
-    config = function()
-      require("copilot").setup({
-        copilot_node_command = vim.fn.trim(vim.fn.system("which node")),
-        suggestion = { enabled = true },
-        panel = { enabled = false },
-      })
-    end,
-  },
-  {
-    "zbirenbaum/copilot-cmp",
-    dependencies = { "zbirenbaum/copilot.lua" },
-    config = function()
-      require("copilot_cmp").setup()
-    end,
-  },
   'David-Kunz/gen.nvim',
 
   -- Tree
