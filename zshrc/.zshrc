@@ -71,7 +71,7 @@ export ATP_AUTH_PASSWORD=$(op read "op://Private/Bluesky beckitrue/password")
 
 # add go to path
 export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:~/.local/bin
+export PATH=~/.local/bin:$PATH
 export GOPATH=$HOME/go
 export GOROOT=/usr/local/go
 export XDG_CONFIG_HOME=~/.config
